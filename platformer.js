@@ -126,7 +126,7 @@ Q.Sprite.extend("Enemy",{
 			Q.stageScene("endGame",1, { label: "Game Over!" });
 		}
 		else {
-			Q.stageScene("endGame",1, { label: "You Died" text: "Try Again" });
+			Q.stageScene("endGame",1, { label: "You Died", text: "Try Again" });
 		}
       }
     });
@@ -279,8 +279,10 @@ Q.scene('endGame',function(stage) {
   // and restart the game.
   button.on("click",function() {
     Q.clearStages();
-    Q.state.reset({ score: 0, lives: 3, level: 1 });
-    Q.('Player'.first().p).resetLevel();
+    if (Q.state.get("lives") == 0) {
+    	Q.state.reset({ score: 0, lives: 3, level: 1 });
+    }
+    Q.('Player').first().resetLevel();
     Q.stageScene('hud', 3, Q('Player').first().p);
   });
 
