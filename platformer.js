@@ -126,6 +126,7 @@ Q.Sprite.extend("Enemy",{
 			Q.stageScene("endGame",1, { label: "Game Over!" });
 		}
 		else {
+			collision.obj.destroy();
 			Q.stageScene("endGame",1, { label: "You Died", text: "Try Again" });
 		}
       }
