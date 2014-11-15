@@ -88,7 +88,12 @@ Q.Sprite.extend("Player",{
             }
           	this.p.direction = "left";
         } else {
-          this.play("stand_" + this.p.direction, 1);
+          if (this.p.landed > 0) {
+            	this.play("stand_" + this.p.direction, 1);
+            }
+            else {
+            	this.play("jump_" + this.p.direction, 1);
+            }	
         }
     }
 	//for level3, player dies if they fall too far
