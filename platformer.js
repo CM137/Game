@@ -73,19 +73,22 @@ Q.Sprite.extend("Player",{
 		if (this.p.vy != 0) {
 			this.play("jump_" + this.p.direction);
         } else if(this.p.vx > 0) {
-            this.play("walk_right", 1);
+            if(this.p.landed > 0) {
+            this.play("walk_right");
+          } else {
+            this.play("jump_right");
+          }
+          this.p.direction = "left";
         } else if(this.p.vx < 0) {
-            this.play("walk_left", 1);
+            if(this.p.landed > 0) {
+            this.play("walk_left");
+          } else {
+            this.play("jump_left");
+          }
+          this.p.direction = "left";
         } else {
           this.play("stand_" + this.p.direction, 1);
         }
-        
-        if(this.p.vx > 0) {
-          	this.p.direction = "right";
-        } else if(this.p.vx < 0) {
-          	this.p.direction = "left";
-        }
-        else {}
     }
 	//for level3, player dies if they fall too far
 	if(this.p.y > 1500) {
