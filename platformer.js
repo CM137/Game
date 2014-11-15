@@ -283,7 +283,7 @@ Q.scene('endGame',function(stage) {
     if (Q.state.get("lives") == 0) {
     	Q.state.reset({ score: 0, lives: 3, level: 1 });
     }
-    Q('Player').first().resetLevel();
+    Q.stageScene('level' + Q.state.get("level");
     Q.stageScene('hud', 3, Q('Player').first().p);
   });
 
