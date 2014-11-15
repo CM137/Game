@@ -50,17 +50,15 @@ Q.Sprite.extend("Player",{
   
   jump: function(obj) {
     // Only play sound once.
-    if (!(obj.p.landed > 0)) {
+    if (!obj.p.playedJump) {
       Q.audio.play('jump.mp3');
-      obj.p.landed = 3/5;
+      obj.p.playedJump = true;
     }
-    console.log("jump");
   },
 
-  /*jumped: function(obj) {
-    obj.p.jumping = false;
-    console.log("jumped");
-  },*/
+  jumped: function(obj) {
+    obj.p.playedJump = false;
+  },
   
    resetLevel: function() {
     Q.stageScene("level" + Q.state.get("level"));
