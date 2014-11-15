@@ -71,7 +71,7 @@ Q.Sprite.extend("Player",{
       this.p.gravity = 1;
 		
 		if (this.p.vy != 0) {
-			this.play("jump_" + direction);
+			this.play("jump_" + this.p.direction);
         } else if(this.p.vx > 0) {
             this.play("walk_right", 1);
         } else if(this.p.vx < 0) {
