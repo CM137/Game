@@ -52,7 +52,7 @@ Q.Sprite.extend("Player",{
     // Only play sound once.
     if (!(obj.p.landed > 0)) {
       Q.audio.play('jump.mp3');
-      obj.p.jumping = true;
+      obj.p.landed = 1/5;
     }
     console.log("jump");
   },
