@@ -312,9 +312,6 @@ Q.scene('title',function(stage) {
   // Expand the container to visibily fit it's contents
   // (with a padding of 20 pixels)
   container.fit(20);
-  
-  stage.add("viewport").follow(container);
-  stage.viewport.scale = 2;
 });
 
 Q.scene('hud',function(stage) {
