@@ -1,7 +1,7 @@
 window.addEventListener("load",function() {
 
 var Q = window.Q = Quintus({ audioSupported: [ 'mp3','ogg' ] })//{audioSupported: ['mp3']}
-        .include("Sprites, Scenes, Input, 2D, Anim, Touch, UI, Audio")
+        .include("Sprites, Scenes, Input, 2D, Anim, Touch, UI, TMX, Audio")
 
         // Maximize this game to whatever the size of the browser is
         .setup({ maximize: true })
@@ -30,7 +30,7 @@ Q.Sprite.extend("Player",{
     // default input actions (left, right to move,  up or action to jump)
     // It also checks to make sure the player is on a horizontal surface before
     // letting them jump.
-    this.add('2d, platformerControls, animation, tween');
+    this.add('2d, platformerControls, animation');
 
     // Write event handlers to respond hook into behaviors.
     // hit.sprite is called everytime the player collides with a sprite
@@ -71,14 +71,14 @@ Q.Sprite.extend("Player",{
       this.p.gravity = 1;
 		
 		if(this.p.vx > 0) {
-          if(this.p.landed > 0) {
+          if(!this.p.playedJump) {
             this.play("walk_right");
           } else {
             this.play("jump_right");
           }
           this.p.direction = "left";
         } else if(this.p.vx < 0) {
-          if(this.p.landed > 0) {
+          if(!this.p.playedJump) {
             this.play("walk_left");
           } else {
             this.play("jump_left");
