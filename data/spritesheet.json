@@ -1,1 +1,1 @@
-{"player":{"sx":0,"sy":0,"cols":20,"tilew":25,"tileh":29,"frames":20},"enemy":{"sx":58,"sy":33,"cols":1,"tilew":24,"tileh":24,"frames":1},"door":{"sx":515,"sy":0,"cols":1,"tilew":46,"tileh":50,"frames":1}}
+{"player":{"sx":0,"sy":0,"cols":20,"tilew":23,"tileh":28,"frames":20},"enemy":{"sx":58,"sy":33,"cols":1,"tilew":24,"tileh":24,"frames":1},"door":{"sx":463,"sy":0,"cols":1,"tilew":44,"tileh":48,"frames":1}}
