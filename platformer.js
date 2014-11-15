@@ -69,16 +69,23 @@ Q.Sprite.extend("Player",{
       
     if(!processed) { 
       this.p.gravity = 1;
-
-        if(this.p.vx > 0) {
+		
+		if (this.p.vy != 0) {
+			this.play("jump_" + direction);
+        } else if(this.p.vx > 0) {
             this.play("walk_right", 1);
-          	this.p.direction = "right";
         } else if(this.p.vx < 0) {
             this.play("walk_left", 1);
-          	this.p.direction = "left";
         } else {
           this.play("stand_" + this.p.direction, 1);
         }
+        
+        if(this.p.vx > 0) {
+          	this.p.direction = "right";
+        } else if(this.p.vx < 0) {
+          	this.p.direction = "left";
+        }
+        else {}
     }
 	//for level3, player dies if they fall too far
 	if(this.p.y > 1500) {
