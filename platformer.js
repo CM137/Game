@@ -1,7 +1,7 @@
 window.addEventListener("load",function() {
 
 var Q = window.Q = Quintus({ audioSupported: [ 'mp3','ogg' ] })//{audioSupported: ['mp3']}
-        .include("Sprites, Scenes, Input, 2D, Anim, Touch, UI, TMX, Audio")
+        .include("Sprites, Scenes, Input, 2D, Anim, Touch, UI, Audio")
 
         // Maximize this game to whatever the size of the browser is
         .setup({ maximize: true })
@@ -71,10 +71,18 @@ Q.Sprite.extend("Player",{
       this.p.gravity = 1;
 		
 		if(this.p.vx > 0) {
-          this.play("walk_right");
+          if(!this.p.playedJump) {
+            this.play("walk_right", 1);
+          } else {
+            this.play("jump_right", 1);
+          }
           this.p.direction = "left";
         } else if(this.p.vx < 0) {
-          this.play("walk_left");
+          if(!this.p.playedJump) {
+            this.play("walk_left", 1);
+          } else {
+            this.play("jump_left", 1);
+          }
           this.p.direction = "left";
         } else {
           this.play("stand_" + this.p.direction, 1);
