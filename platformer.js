@@ -297,9 +297,9 @@ Q.scene('title',function(stage) {
   }));
 
   var button = container.insert(new Q.UI.Button({ x: 0, y: 0, fill: "#FFFFFF",
-                                                  label: stage.options.text }))         
+                                                  label: stage.options.text, size: 48 }))         
   var label = container.insert(new Q.UI.Text({x:10, y: -20 - button.p.h, 
-                                                   label: stage.options.label, color: "white" }));
+                                                   label: stage.options.label, color: "white", size: 64 }));
   // When the button is clicked, clear all the stages
   // and restart the game.
   button.on("click",function() {
