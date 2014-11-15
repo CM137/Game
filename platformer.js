@@ -53,11 +53,13 @@ Q.Sprite.extend("Player",{
     if (!obj.p.jumping) {
       Q.audio.play('jump.mp3');
       obj.p.jumping = true;
+      console.log("jump");
     }
   },
 
   jumped: function(obj) {
     obj.p.jumping = false;
+    console.log("jumped");
   },
   
    resetLevel: function() {
