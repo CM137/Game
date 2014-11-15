@@ -370,8 +370,8 @@ Q.load("spritesheet.png, spritesheet.json, level1.json, level2.json, level3.json
   Q.animations('player', {
       walk_right: { frames: [0,1,2,3,4,5,6,7], rate: 1/6, flip: false, loop: true },
       walk_left: { frames:  [8,9,10,11,12,13,14,15], rate: 1/6, flip: false, loop: true },
-      jump_right: { frames: [16], rate: 1/1, flip: false },
-      jump_left: { frames:  [17], rate: 1/1, flip: false },
+      jump_right: { frames: [17], rate: 1/1, flip: false },
+      jump_left: { frames:  [16], rate: 1/1, flip: false },
       fall_right: { frames:  [18], rate: 1/1, flip: false },
       fall_left: { frames:  [19], rate: 1/1, flip: false },
       stand_right: { frames:[2], rate: 1/1, flip: false },
