@@ -55,6 +55,7 @@ Q.Sprite.extend("Player",{
       obj.p.jumping = true;
       console.log("jump");
     }
+    console.log("jump");
   },
 
   jumped: function(obj) {
