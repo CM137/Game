@@ -123,11 +123,11 @@ Q.Sprite.extend("Enemy",{
       	Q.stageScene('hud', 3, collision.obj.p);
       	if (Q.state.get("lives") == 0) {
     		collision.obj.destroy();
-			Q.stageScene("endGame",1, { label: "Game Over!" });
+			Q.stageScene("endGame",1, { label: "Game Over!", text: "Play Again" });
 		}
 		else {
 			collision.obj.destroy();
-			Q.stageScene("endGame",1, { label: "You Died", text: "Try Again" });
+			Q.stageScene("endGame",1, { label: "You Died", text: "Respawn" });
 		}
       }
     });
