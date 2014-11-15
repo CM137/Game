@@ -71,18 +71,10 @@ Q.Sprite.extend("Player",{
       this.p.gravity = 1;
 		
 		if(this.p.vx > 0) {
-          if(!this.p.playedJump) {
-            this.play("walk_right");
-          } else {
-            this.play("jump_right");
-          }
+          this.play("walk_right");
           this.p.direction = "left";
         } else if(this.p.vx < 0) {
-          if(!this.p.playedJump) {
-            this.play("walk_left");
-          } else {
-            this.play("jump_left");
-          }
+          this.play("walk_left");
           this.p.direction = "left";
         } else {
           this.play("stand_" + this.p.direction, 1);
