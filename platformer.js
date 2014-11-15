@@ -21,6 +21,7 @@ Q.Sprite.extend("Player",{
       x: 90,
       y: 1000, 
       direction: "right",
+      jumping: false,
     });
 
     // Add in pre-made components to get up and running quickly
@@ -49,14 +50,14 @@ Q.Sprite.extend("Player",{
   
   jump: function(obj) {
     // Only play sound once.
-    if (!obj.p.playedJump) {
+    if (!obj.p.jumping) {
       Q.audio.play('jump.mp3');
-      obj.p.playedJump = true;
+      obj.p.jumping = true;
     }
   },
 
   jumped: function(obj) {
-    obj.p.playedJump = false;
+    obj.p.jumping = false;
   },
   
    resetLevel: function() {
@@ -71,10 +72,20 @@ Q.Sprite.extend("Player",{
       this.p.gravity = 1;
 
         if(this.p.vx > 0) {
-            this.play("walk_right", 1);
+        	if (!this.p.jumping) {
+            	this.play("walk_right", 1);
+            }
+            else {
+            	this.play("jump_right", 1);
+            }
           	this.p.direction = "right";
         } else if(this.p.vx < 0) {
-            this.play("walk_left", 1);
+            if (!this.p.jumping) {
+            	this.play("walk_left", 1);
+            }
+            else {
+            	this.play("jump_left", 1);
+            }
           	this.p.direction = "left";
         } else {
           this.play("stand_" + this.p.direction, 1);
