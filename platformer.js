@@ -50,7 +50,7 @@ Q.Sprite.extend("Player",{
   
   jump: function(obj) {
     // Only play sound once.
-    if (obj.p.landed > 0) {
+    if (!(obj.p.landed > 0)) {
       Q.audio.play('jump.mp3');
       obj.p.jumping = true;
     }
