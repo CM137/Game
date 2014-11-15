@@ -70,17 +70,15 @@ Q.Sprite.extend("Player",{
     if(!processed) { 
       this.p.gravity = 1;
 		
-		if (this.p.vy != 0) {
-			this.play("jump_" + this.p.direction);
-        } else if(this.p.vx > 0) {
-            if(this.p.landed > 0) {
+		if(this.p.vx > 0) {
+          if(this.p.landed > 0) {
             this.play("walk_right");
           } else {
             this.play("jump_right");
           }
           this.p.direction = "left";
         } else if(this.p.vx < 0) {
-            if(this.p.landed > 0) {
+          if(this.p.landed > 0) {
             this.play("walk_left");
           } else {
             this.play("jump_left");
