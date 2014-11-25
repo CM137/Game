@@ -73,26 +73,26 @@ Q.Sprite.extend("Player",{
 
         if(this.p.vx > 0) {
         	if (this.p.landed > 0) {
-            	this.play("walk_right", 1);
+            	//this.play("walk_right", 1);
             }
             else {
-            	this.play("jump_right", 1);
+            	//this.play("jump_right", 1);
             }
           	this.p.direction = "right";
         } else if(this.p.vx < 0) {
             if (this.p.landed > 0) {
-            	this.play("walk_left", 1);
+            	//this.play("walk_left", 1);
             }
             else {
-            	this.play("jump_left", 1);
+            	//this.play("jump_left", 1);
             }
           	this.p.direction = "left";
         } else {
           if (this.p.landed > 0) {
-            	this.play("stand_" + this.p.direction, 1);
+            	//this.play("stand_" + this.p.direction, 1);
             }
             else {
-            	this.play("jump_" + this.p.direction, 1);
+            	//this.play("jump_" + this.p.direction, 1);
             }	
         }
     }
@@ -372,7 +372,7 @@ Q.load("spritesheet.png, spritesheet.json, level1.json, level2.json, level3.json
   Q.sheet("tiles","newtiles.png", { tilew: 32, tileh: 32 });
   // Or from a .json asset that defines sprite locations
   Q.compileSheets("spritesheet.png","spritesheet.json");
-  Q.animations('player', {
+  /*Q.animations('player', {
       walk_right: { frames: [0,1,2,3,4,5,6,7], rate: 1/6, flip: false, loop: true },
       walk_left: { frames:  [8,9,10,11,12,13,14,15], rate: 1/6, flip: false, loop: true },
       jump_right: { frames: [17], rate: 1/1, flip: false },
@@ -381,7 +381,7 @@ Q.load("spritesheet.png, spritesheet.json, level1.json, level2.json, level3.json
       fall_left: { frames:  [19], rate: 1/1, flip: false },
       stand_right: { frames:[2], rate: 1/1, flip: false },
       stand_left: { frames: [10], rate: 1/1, flip: false },
-  });
+  });*/
   Q.state.reset({ score: 0, lives: 3, level: 1 });
   
   // Finally, call stageScene to run the game
